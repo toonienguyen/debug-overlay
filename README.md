@@ -87,7 +87,8 @@ Tài liệu kỹ thuật về debug overlay cho web/PWA — hiện thông số d
 - **GitHub Pages** — thay thế đơn giản hơn
 
 ### Backend & Lưu trữ
-- **Cloudflare Workers** — serverless logic nhẹ
+- **Cloudflare Workers** — serverless logic nhẹ, không trạng thái
+- **Render.com** — backend thật (Node/Python/Docker), cron job, websocket — dùng khi Workers không đủ
 - **Workers KV** — key-value storage
 - **Cloudflare D1** — database SQL (SQLite at edge)
 - **Cloudflare R2** — lưu file/ảnh (S3-compatible)
