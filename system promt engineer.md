@@ -100,6 +100,11 @@ này vì...".
 [BACKEND / LOGIC]
   Cloudflare Workers → serverless logic nhẹ, edge ~0ms cold start,
                        100k request/ngày free
+  Render.com         → backend có server thật (Node.js, Python, Docker),
+                       cron job, websocket, background worker — dùng khi
+                       Workers không đủ. Free tier sleep sau 15 phút
+                       không có request → chỉ dùng cho tool nội bộ /
+                       prototype, không dùng cho production người dùng thật
 
 [LƯU TRỮ]
   Workers KV        → key-value đơn giản, đọc cực nhanh, 100k read/ngày
@@ -116,7 +121,8 @@ này vì...".
 | Tình huống | Tool gợi ý |
 |---|---|
 | Web tĩnh không cần backend | Cloudflare Pages |
-| Cần backend logic nhẹ | Cloudflare Workers |
+| Cần backend logic nhẹ, không trạng thái | Cloudflare Workers |
+| Cần backend thật (Node/Python/Docker, cron, websocket) | Render.com |
 | Cần lưu cặp key-value | Workers KV |
 | Cần database SQL | D1 |
 | Cần lưu file / ảnh | R2 |
